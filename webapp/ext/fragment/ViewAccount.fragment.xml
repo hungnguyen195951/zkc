@@ -1,0 +1,70 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:table="sap.ui.table"
+    xmlns="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <m:Dialog
+        id="idSimulateDialog"
+        title="{ReviewData>/title}"
+        stretch="true"
+        horizontalScrolling="false"
+        verticalScrolling="false">
+        <m:content>
+                <ObjectPageLayout id="idReviewDeNghi">
+                    <sections>
+                        <ObjectPageSection
+                            id="idObjectPageSection"
+                            titleUppercase="false">
+                            <subSections>
+                                <ObjectPageSubSection titleUppercase="false">
+                                    <blocks>
+                                        <m:VBox >
+                                            <m:FormattedText htmlText="{ReviewData>/ruleType_Ui}" />
+                                            <m:FormattedText htmlText="{ReviewData>/companyCode_Ui}" class="sapUiTinyMarginTop" />
+                                            <m:FormattedText htmlText="{ReviewData>/documenType_Ui}" class="sapUiTinyMarginTop" />
+                                            <m:FormattedText htmlText="{ReviewData>/documentDate_Ui}" class="sapUiTinyMarginTop" />
+                                            <m:FormattedText htmlText="{ReviewData>/postingDate_Ui}" class="sapUiTinyMarginTop" />                                                                                                  
+                                        </m:VBox>                             
+                                    </blocks>
+                                </ObjectPageSubSection>                       
+                                <ObjectPageSubSection
+                                    id="idItemSection"
+                                    titleUppercase="false">
+                                    <blocks>
+                                        <table:Table
+                                            showNoData="true"
+                                            rows="{ReviewData>/items}"
+                                            selectionMode="MultiToggle"
+                                            paste="onPaste"
+                                            ariaLabelledBy="title">
+                                            <table:columns>
+                                                <table:Column width="5rem" ><m:Label text="Item" /><table:template> <m:Text text="{ReviewData>item}"/></table:template></table:Column>                                         
+                                                <table:Column width="7rem" ><m:Label text="Pst Key" /><table:template> <m:Text text="{ReviewData>postingkey}"/></table:template></table:Column>         
+                                                <table:Column width="10rem"><m:Label text="G/L Account" /><table:template> <m:Text text="{ReviewData>glacount}"/></table:template></table:Column>                                 
+                                                <table:Column width="10rem"><m:Label text="Cost center" /><table:template> <m:Text text="{ReviewData>costcenter}"/></table:template></table:Column>                                                                                                                                                
+                                                <table:Column width="7rem"><m:Label text="Amt in LC" /><table:template> <m:Text text="{ReviewData>amount_Ui}"/></table:template></table:Column>                                                                                                                                      
+                                            </table:columns>
+                                        </table:Table>
+                                    </blocks>
+                                </ObjectPageSubSection>
+                            </subSections>
+                        </ObjectPageSection>
+                    </sections>
+                </ObjectPageLayout>            
+        </m:content>
+        <m:beginButton>
+            <m:Button
+                id="btnPost"
+                press="onPostKC"
+                text="Post"
+                type="Emphasized"/>
+        </m:beginButton>
+        <m:endButton>
+            <m:Button
+                id="btnClose"
+                press="onCloseReviewDialog"
+                text="Close"/>            
+        </m:endButton>
+    </m:Dialog>
+</core:FragmentDefinition>
