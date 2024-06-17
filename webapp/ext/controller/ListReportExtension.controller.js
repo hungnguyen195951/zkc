@@ -27,7 +27,7 @@ sap.ui.define([
                 console.log('onInitSmartFilterBarExtension')
                 var filterObject = this.getView().byId("listReportFilter")
                 let defaultValue = {
-                    "$Parameter.P_FiscalYear" : "2023"
+                    "$Parameter.P_FiscalYear" : new Date().getFullYear()
                 }
                 filterObject.setFilterData(defaultValue)
             },
@@ -91,17 +91,25 @@ sap.ui.define([
                                         tarGlaccount : value.TargetAccount,
                                         currency: value.CompanyCodeCurrency,
                                         tarCostcenter: value.TargetCostCenter,
+                                        tarProfitCenter: value.TargetProfitCenter,
+                                        tarTaxCode: value.TargetTaxCode,
                                         offGlaccount: value.OffsettingAccount,
                                         offCostcenter: value.OffsettingCostCenter,
+                                        offProfitCenter: value.OffsettingProfitCenter,
+                                        offTaxCode: value.OffsettingTaxCode,
                                     })
                                 } else {
                                     let temp_val = {
                                         amount :  listTarget.get(temp_id).amount + TotalAmtInCoCodeCrcyNumber,
                                         tarGlaccount : value.TargetAccount,
                                         tarCostcenter: value.TargetCostCenter,
+                                        tarProfitCenter: value.TargetProfitCenter,
+                                        tarTaxCode: value.TargetTaxCode,
                                         currency: value.CompanyCodeCurrency,
                                         offGlaccount: value.OffsettingAccount,
                                         offCostcenter: value.OffsettingCostCenter,
+                                        offProfitCenter: value.OffsettingProfitCenter,
+                                        offTaxCode: value.OffsettingTaxCode,
                                     }
                                     listTarget.set(temp_id,  temp_val )
                                 }
@@ -122,6 +130,8 @@ sap.ui.define([
                                         amount_Ui : VND.format(Math.abs(value.amount)),
                                         glacount : value.tarGlaccount,
                                         costcenter: value.tarCostcenter,
+                                        profitcenter: value.tarProfitCenter,
+                                        taxcode: value.tarTaxCode,
                                         currency: value.currency
                                     })
                                     v_item += 1
@@ -132,6 +142,8 @@ sap.ui.define([
                                         amount_Ui : VND.format(Math.abs(value.amount)),
                                         glacount : value.offGlaccount,
                                         costcenter: value.offCostcenter,
+                                        profitcenter: value.offProfitCenter,
+                                        taxcode: value.offTaxCode,
                                         currency: value.currency
                                     })
                                 } else {
@@ -143,6 +155,8 @@ sap.ui.define([
                                         amount_Ui : VND.format(Math.abs(value.amount)),
                                         glacount : value.offGlaccount,
                                         costcenter: value.offCostcenter,
+                                        profitcenter: value.offProfitCenter,
+                                        taxcode: value.offTaxCode,
                                         currency: value.currency
                                     })
                                     v_item += 1
@@ -153,6 +167,8 @@ sap.ui.define([
                                         amount_Ui : VND.format(Math.abs(value.amount)),
                                         glacount : value.tarGlaccount,
                                         costcenter: value.tarCostcenter,
+                                        profitcenter: value.tarProfitCenter,
+                                        taxcode: value.tarTaxCode,
                                         currency: value.currency
                                     })
                                     

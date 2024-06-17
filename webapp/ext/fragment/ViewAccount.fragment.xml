@@ -35,15 +35,16 @@
                                         <table:Table
                                             showNoData="true"
                                             rows="{ReviewData>/items}"
-                                            selectionMode="MultiToggle"
-                                            paste="onPaste"
+                                            selectionMode="None"
                                             ariaLabelledBy="title">
                                             <table:columns>
                                                 <table:Column width="5rem" ><m:Label text="Item" /><table:template> <m:Text text="{ReviewData>item}"/></table:template></table:Column>                                         
                                                 <table:Column width="7rem" ><m:Label text="Pst Key" /><table:template> <m:Text text="{ReviewData>postingkey}"/></table:template></table:Column>         
                                                 <table:Column width="10rem"><m:Label text="G/L Account" /><table:template> <m:Text text="{ReviewData>glacount}"/></table:template></table:Column>                                 
                                                 <table:Column width="10rem"><m:Label text="Cost center" /><table:template> <m:Text text="{ReviewData>costcenter}"/></table:template></table:Column>                                                                                                                                                
-                                                <table:Column width="7rem"><m:Label text="Amt in LC" /><table:template> <m:Text text="{ReviewData>amount_Ui}"/></table:template></table:Column>                                                                                                                                      
+                                                <table:Column width="10rem"><m:Label text="Profit center" /><table:template> <m:Text text="{ReviewData>profitcenter}"/></table:template></table:Column>                                                                                                                                                
+                                                <table:Column width="7rem"><m:Label text="Amt in LC" /><table:template> <m:Text text="{ReviewData>amount_Ui}"/></table:template></table:Column>  
+                                                <table:Column width="10rem"><m:Label text="Tax Code" /><table:template> <m:Text text="{ReviewData>taxcode}"/></table:template></table:Column>                                                                                                                                        
                                             </table:columns>
                                         </table:Table>
                                     </blocks>

@@ -20,6 +20,6 @@ builder:
           name: ZKC
           description: "[ABAP]_NganNM_28.11.2023_Create Chức năng kết chuyển"
           package: ZPK_KETCHUYEN
-          transport: ZFCK901599
+          transport: ZFCK901727
         exclude:
           - /test/
